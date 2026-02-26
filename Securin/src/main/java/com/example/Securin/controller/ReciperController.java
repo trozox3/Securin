@@ -24,7 +24,7 @@ public class ReciperController {
     private RecipeService rs;
 
     @PostMapping("/add")
-    public ResponseEntity<Recipe> saveRecipe(@RequestBody Map<String, Object> r)throws Exception{
+    public ResponseEntity<Recipe> saveRecipe(@RequestBody Map<String, Object> r){
         Recipe sr = rs.saveRecipe(r);
         return new ResponseEntity<>(sr,HttpStatus.CREATED);
         

@@ -34,7 +34,7 @@ public class RecipeService {
     @Autowired
     private RecipeRepo rr;  
 
-    public Recipe saveRecipe(Map<String, Object> res) throws Exception 
+    public Recipe saveRecipe(Map<String, Object> res)
     {
        
     ObjectMapper mapper = new ObjectMapper();
