@@ -12,6 +12,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -31,11 +33,13 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    
+    @NotBlank(message = "Title is required")
     @Column(nullable = false)
     private String title;
+    @NotBlank(message = "Cuisine is required")
     @Column(nullable = false)
     private String cuisine;
+    @NotNull(message = "Rating is required")
     @Column(nullable = true)
     private Double rating;
 

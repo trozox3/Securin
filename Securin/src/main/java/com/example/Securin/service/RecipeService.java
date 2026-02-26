@@ -61,7 +61,66 @@ public class RecipeService {
 
     return rr.save(r);
     }
-   /*  public void bulkadd(){
+   
+   public List<Recipe> getTopRecipes(int limit){
+
+    Pageable pageable =
+            PageRequest.of(0, limit, Sort.by(Sort.Direction.DESC, "rating"));
+
+    return rr.findAll(pageable).getContent();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  public void bulkadd(){
         try{
                ObjectMapper mapper = new ObjectMapper();
                InputStream in=new ClassPathResource("recipes.json").getInputStream();
@@ -97,13 +156,6 @@ public class RecipeService {
         }
     }*/
   
-   public List<Recipe> getTopRecipes(int limit){
-
-    Pageable pageable =
-            PageRequest.of(0, limit, Sort.by(Sort.Direction.DESC, "rating"));
-
-    return rr.findAll(pageable).getContent();
-}
 
     
 }
